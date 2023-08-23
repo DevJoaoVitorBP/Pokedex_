@@ -1,22 +1,22 @@
-// Seleciona o elemento HTML com o ID 'pokemonAbout' que será usado para exibir os detalhes do Pokémon.
+// Selects the HTML element with the ID 'pokemonAbout' which will be used to display Pokémon details.
 const pokemonDetailsContainer = document.getElementById('pokemonAbout');
 
-// Obtém os parâmetros da URL da janela atual.
+// Gets the parameters from the URL of the current window.
 const params = new URLSearchParams(window.location.search);
 
-// Obtém o valor do parâmetro 'pokemon' da URL.
+// Gets the value of the 'pokemon' parameter from the URL.
 const pokemonName = params.get('pokemon');
 
-// Faz uma requisição para a API da PokeAPI para obter os detalhes do Pokémon.
+// Makes a request to the PokeAPI's API to fetch Pokémon details.
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-  .then(response => response.json()) // Converte a resposta para JSON.
+  .then(response => response.json()) // Converts the response to JSON.
   .then(data => {
-        // Extrai informações relevantes do objeto 'data'.
+        // Extracts relevant information from the 'data' object.
 
-     // Mapeia as habilidades do Pokémon e as formata em uma string separada por vírgulas.
+     // Maps the Pokémon's abilities and formats them into a comma-separated string.
     const abilities = data.abilities.map(ability => ability.ability.name).join(', ');
 
-    // Função para formatar a altura do Pokémon.
+    // Function to format the Pokémon's height.
     const formatHeight = (heightInDecimeters) => {
       if (heightInDecimeters < 10) {
         return `${heightInDecimeters * 10} cm`;
@@ -25,16 +25,16 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       }
     };
     
-    // Função para formatar o peso do Pokémon.
+    // Function to format the Pokémon's weight.
     const formatWeight = weightInHectograms => {
       return `${(weightInHectograms / 10).toFixed(1)} kg`;
     };
 
-    // Formata a altura e o peso do Pokémon.
+    // Formats the Pokémon's height and weight.
     const heightFormatted = formatHeight(data.height);
     const weightFormatted = formatWeight(data.weight);
 
-    // Cria uma string contendo o HTML a ser exibido na página.
+    // Creates a string containing the HTML to be displayed on the page.
     const html = `
       <div class="header">
         <span class="number">#${data.id}</span>
@@ -52,11 +52,11 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         <p>Abilities: <span>${abilities}</span></p>
       </div>
     `;
-     // Insere o HTML criado no container selecionado.
+     // Inserts the generated HTML into the selected container.
     pokemonDetailsContainer.innerHTML = html;
   })
   .catch(error => {
-    // Em caso de erro, exibe uma mensagem de erro no container.
-    console.error('Erro ao buscar dados do Pokémon:', error);
-    pokemonDetailsContainer.innerHTML = '<p>Erro ao buscar dados do Pokémon.</p>';
+    // In case of an error, displays an error message in the container.
+    console.error('Error fetching Pokémon data:', error);
+    pokemonDetailsContainer.innerHTML = '<p>Error fetching Pokémon data.</p>';
   });
