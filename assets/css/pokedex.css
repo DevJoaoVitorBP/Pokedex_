@@ -6,6 +6,14 @@
     list-style: none;
 }
 
+#loadMoreButton{
+    cursor: pointer;
+}
+
+.namee{
+    cursor: pointer;
+}
+
 .normal {
     background-color: #a6a877;
 }
@@ -16,6 +24,7 @@
 
 .fire {
     background-color: #ee7f30;
+    background-image: url('assets/img/fire.png');
 }
 
 .water {

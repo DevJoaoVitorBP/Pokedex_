@@ -13,20 +13,20 @@ let offset = 0;
 // Function to convert a Pokemon object to an HTML list item.
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
-            <span class="number">#${pokemon.number}</span>
-            <span class="namee" data-pokemon="${pokemon.name}">${pokemon.name}</span>
+    <li class="pokemon ${pokemon.type}">
+    <span class="number">#${pokemon.number}</span>
+    <span class="namee" data-pokemon="${pokemon.name}">${pokemon.name}</span>
 
-            <div class="detail">
-                <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>
+    <div class="detail">
+        <ol class="types">
+            ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+        </ol>
 
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
-            </div>
-        </li>
-    `;
+        <img src="${pokemon.photo}"
+             alt="${pokemon.name}">
+    </div>
+</li>
+`;
 }
 
 // Function to load Pokémon items and append them to the list.
@@ -45,7 +45,7 @@ loadPokemonItems(offset, limit);
 
 // Add a click event listener to the 'pokemonList' element.
 pokemonList.addEventListener('click', (event) => {
-    // Find the closest '.namee' element (Pokemon name clicked).
+    // Find the closest '.pokemon' element (Pokemon name clicked).
     const clickedPokemon = event.target.closest('.namee');
     if (clickedPokemon) {
         // Get the Pokemon's name from the 'data-pokemon' attribute.

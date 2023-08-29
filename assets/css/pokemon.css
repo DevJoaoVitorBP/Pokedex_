@@ -3,9 +3,6 @@
     border-radius: 22px 22px 0px 0px;
 }
 
-.card{
-    background-color: green;
-}
 
 img{
     max-width: 100%;
@@ -14,7 +11,7 @@ img{
     top: 17%;
 }
 
-.header{
+.typess{
     height: 16rem;
 }
 .number{
@@ -28,26 +25,33 @@ img{
     display: flex;
     margin-top: 20px;
     margin-left: 22px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .details{
     position: absolute;
-    top: 2%;
+    top: -2%;
 }
 
 .details ol{
     margin-left: 22px;
     display: inline-flex;
-    gap:33px
+    gap:33px    
     
 }
 
 .type{
-    padding: 0px 10px;
+    padding: 0px 24px;
     border-radius: 20px;
-    margin-left: 23px;
-    background-color: aqua;
+    margin-left: 14px;
+    font-size: 14px;
+    
 }
+
+/* 
+* Pokemon Type Colors
+*/
 
 .normal {
     background-color: #a6a877;
@@ -118,5 +122,81 @@ img{
 }
 
 .fairy {
+    background-color: #f9aec7;
+}
+
+
+/*
+*  Pokemon Background Colors
+*/
+#normal {
+    background-color: #a6a877;
+}
+
+#grass {
+    background-color: #77c850;
+}
+
+#fire {
+    background-color: #ee7f30;
+}
+
+#water {
+    background-color: #678fee;
+}
+
+#electric {
+    background-color: #f7cf2e;
+}
+
+#ice {
+    background-color: #98d5d7;
+}
+
+#ground {
+    background-color: #dfbf69;
+}
+
+#flying {
+    background-color: #a98ff0;
+}
+
+#poison {
+    background-color: #a040a0;
+}
+
+#fighting {
+    background-color: #bf3029;
+}
+
+#psychic {
+    background-color: #f65687;
+}
+
+#dark {
+    background-color: #725847;
+}
+
+#rock {
+    background-color: #b8a137;
+}
+
+#bug {
+    background-color: #a8b720;
+}
+
+#ghost {
+    background-color: #6e5896;
+}
+
+#steel {
+    background-color: #b9b7cf;
+}
+
+#dragon {
+    background-color: #6f38f6;
+}
+
+#fairy {
     background-color: #f9aec7;
 }
